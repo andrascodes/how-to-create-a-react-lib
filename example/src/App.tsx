@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { TestComponent } from "how-to-create-a-react-lib";
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +20,7 @@ function App() {
         >
           Learn React
         </a>
+      <TestComponent color="lightgreen" />
       </header>
     </div>
   );
