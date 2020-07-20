@@ -11,6 +11,7 @@
   "files": ["dist"],
   "types": "dist/index.d.ts",
   "scripts": {
+    "generate-example": "npx create-react-app example --template typescript",
     "build": "rollup -c",
     "watch": "rollup -cw"
   },
