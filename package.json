@@ -2,11 +2,18 @@
   "name": "how-to-create-a-react-lib",
   "version": "1.0.0",
   "description": "Example repo on how to create a React library",
-  "main": "index.js",
   "repository": "git@github.com:andrewszucs/how-to-create-a-react-lib.git",
   "author": "András Szücs <andrew0szucs@gmail.com>",
   "license": "MIT",
   "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": ["dist"],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw"
+  },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
@@ -14,9 +21,14 @@
   "devDependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
     "@types/react": "^16.9.43",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "rollup": "^2.22.1",
+    "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-typescript2": "^0.27.1",
     "typescript": "^3.9.7"
   }
 }
