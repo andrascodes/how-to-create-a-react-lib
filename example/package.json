@@ -1,5 +1,6 @@
 {
   "name": "example",
+  "homepage": "http://andrewszucs.github.io/how-to-create-a-react-lib",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
