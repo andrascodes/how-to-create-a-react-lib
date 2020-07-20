@@ -6,5 +6,14 @@
   "repository": "git@github.com:andrewszucs/how-to-create-a-react-lib.git",
   "author": "András Szücs <andrew0szucs@gmail.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.43",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
 }
