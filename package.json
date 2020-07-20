@@ -8,7 +8,9 @@
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "types": "dist/index.d.ts",
   "scripts": {
     "generate-example": "npx create-react-app example --template typescript",
@@ -24,9 +26,16 @@
     "@emotion/styled": "^10.0.27",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
+    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/react": "^10.4.7",
+    "@testing-library/user-event": "^12.0.11",
+    "@types/jest": "^26.0.5",
+    "@types/node": "^14.0.24",
     "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
     "rollup": "^2.22.1",
     "rollup-plugin-peer-deps-external": "^2.2.3",
     "rollup-plugin-typescript2": "^0.27.1",
