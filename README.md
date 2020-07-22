@@ -274,3 +274,103 @@ cd example && yarn start
   - This will create a new branch named `gh-pages` commit the `example/build` folder to that branch, push it to our Github repo and set it as the base for Github Pages.
 
 ## Setting up ESLint, Prettier, Husky and Lint-staged for code quality
+
+### 1. [Add ESLint with the `eslint-config-react-app` preset](https://www.npmjs.com/package/eslint-config-react-app)
+
+- `yarn add -D eslint-config-react-app @typescript-eslint/eslint-plugin@2.x @typescript-eslint/parser@2.x babel-eslint@10.x eslint@6.x eslint-plugin-flowtype@4.x eslint-plugin-import@2.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-react-hooks@2.x`
+- Create an `eslintrc.json` file and add the following:
+
+```json
+{
+  "extends": ["react-app"],
+  /** These are optional: */
+  "rules": {
+    /** Warn if console.log are added */
+    "no-console": "warn",
+
+    /** Enforcing rules about import ordering */
+    "import/order": [
+      "warn",
+      {
+        "groups": [["builtin", "external"], "internal", ["parent", "sibling", "index"]],
+        "newlines-between": "always-and-inside-groups"
+      }
+    ]
+  }
+}
+```
+
+### 2. [Add Prettier and integrate it with ESLint](https://thomlom.dev/setup-eslint-prettier-react/)
+
+- `yarn add -D prettier eslint-config-prettier eslint-plugin-prettier`
+- Add `plugin:prettier/recommended` to the `extends` array in `eslintrc.json`:
+
+```json
+{
+  "extends": [..., "plugin:prettier/recommended"],
+  ...
+}
+```
+
+- Add a `.prettierrc` file to configure Prettier:
+
+```json
+{
+  "semi": true,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "arrowParens": "always",
+  "printWidth": 90
+}
+```
+
+### 3. [Add `husky` and `lint-staged` to lint and format at each commit](https://thomlom.dev/setup-eslint-prettier-react/)
+
+- `yarn add -D husky lint-staged`
+
+- Add a `lint` and a `format` script to `package.json`:
+
+```json
+"scripts": {
+  "lint": "eslint . --max-warnings=0",
+  "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|md|vue)\"",
+}
+```
+
+- Add the `husky` and `lint-staged` config to `package.json`:
+
+```json
+"husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && yarn format"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx|ts|tsx)": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+```
+
+### 4. Add a script for running Typescript check
+
+- Add the following to `scripts` in `package.json`:
+
+```json
+...
+"scripts": {
+  ...
+  "typecheck": "tsc -p ./tsconfig.json",
+  "typecheck:watch": "yarn typecheck --watch"
+}
+...
+```
