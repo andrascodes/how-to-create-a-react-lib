@@ -20,7 +20,7 @@
     "clean": "gh-pages-clean",
     "predeploy": "cd example && yarn install && yarn build",
     "deploy": "gh-pages -d example/build",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings=0",
     "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|md|vue)\""
   },
   "husky": {
