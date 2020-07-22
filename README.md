@@ -255,6 +255,8 @@ cd example && yarn start
 ...
 ```
 
+- `yarn add -D gh-pages`
+
 - Add the following `scripts` to `package.json` in root:
   - I needed the `clean` script because I ran into [this](https://github.com/transitive-bullshit/react-modern-library-boilerplate/issues/15) issue saying: `fatal: A branch named 'gh-pages' already exists.`
 
@@ -278,7 +280,7 @@ cd example && yarn start
 ### 1. [Add ESLint with the `eslint-config-react-app` preset](https://www.npmjs.com/package/eslint-config-react-app)
 
 - `yarn add -D eslint-config-react-app @typescript-eslint/eslint-plugin@2.x @typescript-eslint/parser@2.x babel-eslint@10.x eslint@6.x eslint-plugin-flowtype@4.x eslint-plugin-import@2.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-react-hooks@2.x`
-- Create an `eslintrc.json` file and add the following:
+- Create an `.eslintrc.json` file and add the following:
 
 ```json
 {
@@ -349,16 +351,16 @@ cd example && yarn start
       "pre-commit": "yarn lint && yarn format"
     }
   },
-  "lint-staged": {
-    "*.+(js|jsx|ts|tsx)": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.+(json|css|md)": [
-      "prettier --write",
-      "git add"
-    ]
-  },
+"lint-staged": {
+  "*.+(js|jsx|ts|tsx)": [
+    "eslint --fix",
+    "git add"
+  ],
+  "*.+(json|css|md)": [
+    "prettier --write",
+    "git add"
+  ]
+},
 ```
 
 ### 4. Add a script for running Typescript check
