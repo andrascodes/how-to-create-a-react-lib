@@ -8,26 +8,33 @@
   "license": "MIT",
   "private": false,
   "main": "dist/index.js",
+  "browser": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "files": [
-    "dist"
+    "/dist"
   ],
   "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "typescript": {
+    "definition": "dist/index.d.ts"
+  },
   "scripts": {
-    "build": "rollup -c",
-    "watch": "rollup -cw",
     "generate-example": "npx create-react-app example --template typescript",
+    "watch": "rollup -cw",
+    "build": "rollup -c",
+    "postbuild": "yarn pack && tar -xvzf *.tgz && rm -rf package *.tgz",
+    "prepublishOnly": "rm -rf dist && yarn build",
     "clean": "gh-pages-clean",
     "predeploy": "cd example && yarn install && yarn build",
     "deploy": "gh-pages -d example/build",
-    "lint": "eslint . --max-warnings=0",
+    "lint": "eslint src example/src --ext ts,tsx,js,jsx --max-warnings=0",
     "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|md|vue)\"",
     "typecheck": "tsc -p ./tsconfig.json",
     "typecheck:watch": "yarn typecheck --watch"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && yarn format"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
@@ -77,7 +84,9 @@
     "react-scripts": "^3.4.1",
     "rollup": "^2.22.1",
     "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-typescript2": "^0.27.1",
+    "rollup-plugin-uglify": "^6.0.4",
     "typescript": "^3.9.7"
   }
 }

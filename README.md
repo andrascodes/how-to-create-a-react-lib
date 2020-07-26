@@ -376,3 +376,8 @@ cd example && yarn start
 }
 ...
 ```
+
+## [Adding Minification to the build process](https://medium.com/better-programming/lets-build-react-components-library-part-3-b2e7aec478a2)
+
+- `yarn add -D rollup-plugin-uglify rollup-plugin-terser`
+- Change `rollup.config.js`
