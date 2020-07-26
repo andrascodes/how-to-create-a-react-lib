@@ -10,19 +10,24 @@
   "main": "dist/index.js",
   "browser": "dist/index.umd.js",
   "module": "dist/index.es.js",
-  "files": [
-    "/dist"
-  ],
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
   "typescript": {
     "definition": "dist/index.d.ts"
+  },
+  "files": [
+    "/dist"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "pkgRoot": "dist"
   },
   "scripts": {
     "generate-example": "npx create-react-app example --template typescript",
     "watch": "rollup -cw",
     "build": "rollup -c",
     "postbuild": "yarn pack && tar -xvzf *.tgz && rm -rf package *.tgz",
+    "cz": "git-cz",
     "prepublishOnly": "rm -rf dist && yarn build",
     "clean": "gh-pages-clean",
     "predeploy": "cd example && yarn install && yarn build",
@@ -30,11 +35,18 @@
     "lint": "eslint src example/src --ext ts,tsx,js,jsx --max-warnings=0",
     "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|md|vue)\"",
     "typecheck": "tsc -p ./tsconfig.json",
-    "typecheck:watch": "yarn typecheck --watch"
+    "typecheck:watch": "yarn typecheck --watch",
+    "semantic-release": "semantic-release"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   },
   "lint-staged": {
@@ -56,6 +68,8 @@
     "@emotion/styled": "^10.0.27",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "@testing-library/jest-dom": "^5.11.1",
     "@testing-library/react": "^10.4.7",
     "@testing-library/user-event": "^12.0.11",
@@ -66,6 +80,8 @@
     "@typescript-eslint/eslint-plugin": "2.x",
     "@typescript-eslint/parser": "2.x",
     "babel-eslint": "10.x",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "3.2.0",
     "eslint": "6.x",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-react-app": "^5.2.1",
@@ -87,6 +103,7 @@
     "rollup-plugin-terser": "^6.1.0",
     "rollup-plugin-typescript2": "^0.27.1",
     "rollup-plugin-uglify": "^6.0.4",
+    "semantic-release": "^17.1.1",
     "typescript": "^3.9.7"
   }
 }
