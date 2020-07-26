@@ -14,7 +14,7 @@ const TestComponent: React.FC<TestComponentProps> = ({ color }) => (
       }
     `}
   >
-    This is a {color} component with a hotpink background.
+    This is a component with a hotpink background and {color} text.
   </div>
 );
 
