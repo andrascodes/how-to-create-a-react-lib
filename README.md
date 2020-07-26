@@ -381,3 +381,59 @@ cd example && yarn start
 
 - `yarn add -D rollup-plugin-uglify rollup-plugin-terser`
 - Change `rollup.config.js`
+
+## Setting up semantic-release and Github Actions workflow
+
+- `npx semantic-release-cli setup`
+- Add this to `package.json`:
+
+```json
+{
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "pkgRoot": "build"
+  }
+}
+```
+
+- Change back `version` in `package.json`:
+
+```json
+"version":"1.0.0"
+```
+
+- Add `.releaserc.json` to configure `semantic-release`:
+
+```json
+{
+  "branches": "master",
+  "repositoryUrl": "https://github.com/andrewszucs/how-to-create-a-react-lib",
+  "debug": "true",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/npm",
+    "@semantic-release/github",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["package.json", "package-lock.json", "CHANGELOG.md"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}
+```
+
+- `yarn add -D @semantic-release/git @semantic-release/changelog`
+
+### Setting up `commitizen`
+
+- `yarn add -D commitizen`
+- `npx commitizen init cz-conventional-changelog --yarn --dev --exact`
