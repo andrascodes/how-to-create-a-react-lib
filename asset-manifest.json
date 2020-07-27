@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/how-to-create-a-react-lib/static/css/main.5f361e03.chunk.css",
-    "main.js": "/how-to-create-a-react-lib/static/js/main.9839fc24.chunk.js",
-    "main.js.map": "/how-to-create-a-react-lib/static/js/main.9839fc24.chunk.js.map",
+    "main.css": "/how-to-create-a-react-lib/static/css/main.2bc82f4a.chunk.css",
+    "main.js": "/how-to-create-a-react-lib/static/js/main.bd6dd31f.chunk.js",
+    "main.js.map": "/how-to-create-a-react-lib/static/js/main.bd6dd31f.chunk.js.map",
     "runtime-main.js": "/how-to-create-a-react-lib/static/js/runtime-main.ebe6c836.js",
     "runtime-main.js.map": "/how-to-create-a-react-lib/static/js/runtime-main.ebe6c836.js.map",
-    "static/js/2.f5498493.chunk.js": "/how-to-create-a-react-lib/static/js/2.f5498493.chunk.js",
-    "static/js/2.f5498493.chunk.js.map": "/how-to-create-a-react-lib/static/js/2.f5498493.chunk.js.map",
+    "static/js/2.d33c1625.chunk.js": "/how-to-create-a-react-lib/static/js/2.d33c1625.chunk.js",
+    "static/js/2.d33c1625.chunk.js.map": "/how-to-create-a-react-lib/static/js/2.d33c1625.chunk.js.map",
     "index.html": "/how-to-create-a-react-lib/index.html",
-    "precache-manifest.888f45970cfc9f185776dd3c3e7e3dea.js": "/how-to-create-a-react-lib/precache-manifest.888f45970cfc9f185776dd3c3e7e3dea.js",
+    "precache-manifest.8d0a3ed95a5c2bdb71427bc00f6d815d.js": "/how-to-create-a-react-lib/precache-manifest.8d0a3ed95a5c2bdb71427bc00f6d815d.js",
     "service-worker.js": "/how-to-create-a-react-lib/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/how-to-create-a-react-lib/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.f5498493.chunk.js.LICENSE.txt": "/how-to-create-a-react-lib/static/js/2.f5498493.chunk.js.LICENSE.txt",
+    "static/css/main.2bc82f4a.chunk.css.map": "/how-to-create-a-react-lib/static/css/main.2bc82f4a.chunk.css.map",
+    "static/js/2.d33c1625.chunk.js.LICENSE.txt": "/how-to-create-a-react-lib/static/js/2.d33c1625.chunk.js.LICENSE.txt",
+    "static/js/main.bd6dd31f.chunk.js.LICENSE.txt": "/how-to-create-a-react-lib/static/js/main.bd6dd31f.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/how-to-create-a-react-lib/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.ebe6c836.js",
-    "static/js/2.f5498493.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.9839fc24.chunk.js"
+    "static/js/2.d33c1625.chunk.js",
+    "static/css/main.2bc82f4a.chunk.css",
+    "static/js/main.bd6dd31f.chunk.js"
   ]
 }
