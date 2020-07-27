@@ -19,7 +19,7 @@ jobs:
         - yarn build
 
     - stage: release
-      if: branch = master
+      if: branch = master AND type = push AND fork = false
       script:
         - yarn build
         - yarn run semantic-release
