@@ -433,6 +433,47 @@ cd example && yarn start
 
 - `yarn add -D @semantic-release/git @semantic-release/changelog`
 
+### Need to add a bot user with zero vulnerabilities to push
+
+- `GITHUB_TOKEN` is not defined
+
+```
+[11:08:54 PM] [semantic-release] › ✖  Failed step "prepare" of plugin "@semantic-release/git"
+[11:08:54 PM] [semantic-release] › ✖  An error occurred while running semantic-release: Error: Command failed with exit code 1: git push --tags https://github.com/andrewszucs/how-to-create-a-react-lib HEAD:master
+remote: error: GH006: Protected branch update failed for refs/heads/master.
+remote: error: Required status check "Test code" is expected. At least 1 approving review is required by reviewers with write access.
+To https://github.com/andrewszucs/how-to-create-a-react-lib
+ ! [remote rejected] HEAD -> master (protected branch hook declined)
+error: failed to push some refs to 'https://github.com/andrewszucs/how-to-create-a-react-lib'
+    at makeError (/home/runner/work/how-to-create-a-react-lib/how-to-create-a-react-lib/node_modules/@semantic-release/git/node_modules/execa/lib/error.js:59:11)
+    at handlePromise (/home/runner/work/how-to-create-a-react-lib/how-to-create-a-react-lib/node_modules/@semantic-release/git/node_modules/execa/index.js:114:26)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async push (/home/runner/work/how-to-create-a-react-lib/how-to-create-a-react-lib/node_modules/@semantic-release/git/lib/git.js:51:3)
+    at async module.exports (/home/runner/work/how-to-create-a-react-lib/how-to-create-a-react-lib/node_modules/@semantic-release/git/lib/prepare.js:69:5)
+    at async prepare (/home/runner/work/how-to-create-a-react-lib/how-to-create-a-react-lib/node_modules/@semantic-release/git/index.js:28:3)
+    at async validator (/home/runner/work/how-to-create-a-react-lib/how-to-create-a-react-lib/node_modules/semantic-release/lib/plugins/normalize.js:34:24)
+    at async /home/runner/work/how-to-create-a-react-lib/how-to-create-a-react-lib/node_modules/semantic-release/lib/plugins/pipeline.js:37:34
+    at async /home/runner/work/how-to-create-a-react-lib/how-to-create-a-react-lib/node_modules/semantic-release/lib/plugins/pipeline.js:31:3
+    at async Object.pluginsConf.<computed> [as prepare] (/home/runner/work/how-to-create-a-react-lib/how-to-create-a-react-lib/node_modules/semantic-release/lib/plugins/index.js:80:11) {
+  shortMessage: 'Command failed with exit code 1: git push --tags https://github.com/andrewszucs/how-to-create-a-react-lib HEAD:master',
+  command: 'git push --tags https://github.com/andrewszucs/how-to-create-a-react-lib HEAD:master',
+  exitCode: 1,
+  signal: undefined,
+  signalDescription: undefined,
+  stdout: '',
+  stderr: 'remote: error: GH006: Protected branch update failed for refs/heads/master.        \n' +
+    'remote: error: Required status check "Test code" is expected. At least 1 approving review is required by reviewers with write access.        \n' +
+    'To https://github.com/andrewszucs/how-to-create-a-react-lib\n' +
+    ' ! [remote rejected] HEAD -> master (protected branch hook declined)\n' +
+    "error: failed to push some refs to 'https://github.com/andrewszucs/how-to-create-a-react-lib'",
+  failed: true,
+  timedOut: [secure],
+  isCanceled: [secure],
+  killed: [secure],
+  pluginName: '@semantic-release/git'
+}
+```
+
 ### Setting up `commitizen`
 
 - `yarn add -D commitizen`
