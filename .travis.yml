@@ -1,0 +1,28 @@
+language: node_js
+
+node_js:
+  - 12
+
+cache: yarn
+
+jobs:
+  include:
+    - stage: install
+      script: yarn install --frozen-lockfile --ignore-optional
+      skip_cleanup: true
+    - stage: release
+      skip_cleanup: true
+      script:
+        - yarn typecheck
+        - yarn lint
+    - stage: build
+      skip_cleanup: true
+      script: yarn build
+    - stage: release
+      skip_cleanup: true
+      script: yarn run semantic-release
+      if: branch = master
+    - stage: deploy
+      skip_cleanup: true
+      script: yarn deploy
+      if: branch = master
