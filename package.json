@@ -1,5 +1,5 @@
 {
-  "name": "how-to-create-a-react-lib",
+  "name": "react-lib-tutorial",
   "version": "1.0.0",
   "description": "Example repo on how to create a React library",
   "repository": "git@github.com:andrewszucs/how-to-create-a-react-lib.git",
@@ -19,6 +19,7 @@
     "/dist"
   ],
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/",
     "pkgRoot": "dist"
   },

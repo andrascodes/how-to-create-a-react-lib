@@ -21,7 +21,6 @@ jobs:
     - stage: release
       if: branch = master AND type = push AND fork = false
       script:
-        - yarn build
         - yarn run semantic-release
       deploy:
         provider: pages
