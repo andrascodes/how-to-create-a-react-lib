@@ -25,5 +25,5 @@ jobs:
         - yarn run semantic-release
       deploy:
         provider: pages
-        github_token: $github_token
+        github_token: $GH_TOKEN
         local_dir: example/build
