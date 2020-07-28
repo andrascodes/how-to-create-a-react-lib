@@ -20,7 +20,7 @@ function App() {
         >
           Learn React
         </a>
-        <TestComponent color='lightgreen' />
+        <TestComponent color='lightgreen' background='blue' />
       </header>
     </div>
   );
