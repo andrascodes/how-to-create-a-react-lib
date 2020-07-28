@@ -22,4 +22,10 @@ jobs:
       if: branch = master AND type = push AND fork = false
       script:
         - yarn run semantic-release
-      after_success: yarn deploy
+      before_deploy: yarn predeploy
+      deploy:
+        provider: pages
+        github_token: $GH_TOKEN
+        local_dir: example/build
+        skip_cleanup: true
+        keep_history: true
