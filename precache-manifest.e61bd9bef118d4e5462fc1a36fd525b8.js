@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f96945a076235097b03ccea43510ac7f",
+    "revision": "ad97f8aba3d651e08d594ecc2d9543f6",
     "url": "/how-to-create-a-react-lib/index.html"
   },
   {
-    "revision": "64198999ba93918e556a",
+    "revision": "61a665ab0abdbd46acb4",
     "url": "/how-to-create-a-react-lib/static/css/main.2bc82f4a.chunk.css"
   },
   {
@@ -16,12 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/how-to-create-a-react-lib/static/js/2.d33c1625.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "64198999ba93918e556a",
-    "url": "/how-to-create-a-react-lib/static/js/main.bd6dd31f.chunk.js"
+    "revision": "61a665ab0abdbd46acb4",
+    "url": "/how-to-create-a-react-lib/static/js/main.a28372a1.chunk.js"
   },
   {
     "revision": "b23d7a495722fec387cea56b861b816c",
-    "url": "/how-to-create-a-react-lib/static/js/main.bd6dd31f.chunk.js.LICENSE.txt"
+    "url": "/how-to-create-a-react-lib/static/js/main.a28372a1.chunk.js.LICENSE.txt"
   },
   {
     "revision": "553d2ac98a84d2f97dbd",
