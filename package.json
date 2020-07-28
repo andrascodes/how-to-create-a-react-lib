@@ -1,6 +1,6 @@
 {
   "name": "react-lib-tutorial",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Example repo on how to create a React library",
   "repository": "git@github.com:andrewszucs/how-to-create-a-react-lib.git",
   "homepage": "http://andrewszucs.github.io/how-to-create-a-react-lib",
